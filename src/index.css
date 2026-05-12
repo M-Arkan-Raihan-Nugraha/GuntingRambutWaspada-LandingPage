@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1c1917;
+}
+::-webkit-scrollbar-thumb {
+  background: #78350f;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #92400e;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: #92400e;
+  color: #fef3c7;
+}
+
+/* Remove default button outlines for custom ones */
+button:focus-visible {
+  outline: 2px solid #d97706;
+  outline-offset: 2px;
+}
+
+/* Ensure fonts work */
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
