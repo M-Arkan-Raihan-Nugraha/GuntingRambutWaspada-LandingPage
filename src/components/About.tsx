@@ -143,13 +143,13 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7 }}
-            className="relative"
+            className="relative group"
           >
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
               <img
-                src="/images/barber-about.jpg"
+                src="/images/waspada.jpg"
                 alt="Suasana Gunting Rambut Waspada"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950/60 to-transparent" />
               {/* Floating badge */}

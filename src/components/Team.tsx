@@ -6,14 +6,14 @@ const team = [
     name: "H. Asep Waspada",
     role: "Pendiri & Pemilik",
     description: "Merintis Gunting Rambut Waspada sejak 1982. Menjaga kualitas dan tradisi pangkas rambut klasik tetap hidup di Cianjur.",
-    image: "/images/barber-about.jpg",
+    image: "/images/owner.jpg",
     accent: "red"
   },
   {
-    name: "Kang Ujang",
+    name: "Syahrul Anwar (Acong)",
     role: "Senior Barber",
     description: "Berpengalaman lebih dari 15 tahun. Ahli dalam gaya rambut klasik maupun modern yang disukai berbagai kalangan.",
-    image: "/images/haircut-1.jpg",
+    image: "/images/acong.png",
     accent: "amber"
   },
   {
@@ -22,6 +22,13 @@ const team = [
     description: "Generasi penerus dengan keterampilan cekatan dan selalu update dengan tren pangkas rambut masa kini.",
     image: "/images/haircut-2.jpg",
     accent: "blue"
+  },
+  {
+    name: "Kang Deni",
+    role: "Barber",
+    description: "Tenaga muda profesional yang selalu memastikan kepuasan dan kenyamanan di setiap potongan rambut.",
+    image: "/images/haircut-3.jpg",
+    accent: "stone"
   }
 ];
 
@@ -58,7 +65,7 @@ export default function Team() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 md:gap-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {team.map((member, i) => (
             <motion.div
               key={member.name}
@@ -71,14 +78,15 @@ export default function Team() {
               {/* Background Glow */}
               <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 ${
                 member.accent === 'red' ? 'bg-red-500' : 
-                member.accent === 'blue' ? 'bg-blue-500' : 'bg-amber-500'
+                member.accent === 'blue' ? 'bg-blue-500' : 
+                member.accent === 'stone' ? 'bg-stone-500' : 'bg-amber-500'
               }`} />
               
               <div className="aspect-[4/3] overflow-hidden relative">
                 <img 
                   src={member.image} 
                   alt={member.name} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
                 />
                 <div className={`absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-stone-950 to-transparent`} />
               </div>
@@ -87,17 +95,20 @@ export default function Team() {
                 <div className="w-16 h-16 rounded-full bg-stone-800 border-2 border-stone-950 flex items-center justify-center mx-auto mb-4 relative overflow-hidden">
                   <div className={`absolute inset-0 opacity-20 ${
                     member.accent === 'red' ? 'bg-red-500' : 
-                    member.accent === 'blue' ? 'bg-blue-500' : 'bg-amber-500'
+                    member.accent === 'blue' ? 'bg-blue-500' : 
+                    member.accent === 'stone' ? 'bg-stone-500' : 'bg-amber-500'
                   }`} />
                   <User className={`w-6 h-6 ${
                     member.accent === 'red' ? 'text-red-400' : 
-                    member.accent === 'blue' ? 'text-blue-400' : 'text-amber-400'
+                    member.accent === 'blue' ? 'text-blue-400' : 
+                    member.accent === 'stone' ? 'text-stone-400' : 'text-amber-400'
                   }`} />
                 </div>
                 <h3 className="text-xl font-bold text-stone-100 mb-1" style={{ fontFamily: "Lora, serif" }}>{member.name}</h3>
                 <p className={`text-sm font-medium mb-4 tracking-wide ${
                   member.accent === 'red' ? 'text-red-400' : 
-                  member.accent === 'blue' ? 'text-blue-400' : 'text-amber-400'
+                  member.accent === 'blue' ? 'text-blue-400' : 
+                  member.accent === 'stone' ? 'text-stone-400' : 'text-amber-400'
                 }`}>{member.role}</p>
                 <p className="text-stone-400 text-sm leading-relaxed">
                   {member.description}

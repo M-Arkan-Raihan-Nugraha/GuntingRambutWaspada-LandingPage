@@ -73,7 +73,7 @@ export default function Footer() {
           <div className="grid md:grid-cols-3 gap-10 md:gap-8">
             {/* Brand */}
             <div className="md:col-span-1">
-              <div className="flex items-center gap-3 mb-5">
+              <div className="flex items-center gap-3 mb-5 group cursor-default">
                 <div className="w-12 h-12 rounded-full overflow-hidden border border-amber-700/40 flex-shrink-0">
                   <img src="/images/logo.jpeg" alt="Logo Gunting Rambut Waspada" className="w-full h-full object-cover" />
                 </div>

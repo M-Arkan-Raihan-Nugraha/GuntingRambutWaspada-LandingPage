@@ -10,14 +10,14 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden group"
     >
       {/* Background Image with overlay */}
       <div className="absolute inset-0">
         <img
           src="/images/hero-bg.jpg"
           alt="Suasana Gunting Rambut Waspada"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center grayscale transition-all duration-700 group-hover:grayscale-0"
         />
         {/* Multi-layer gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-stone-950/80 via-stone-900/70 to-stone-950/90" />
