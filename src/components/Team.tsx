@@ -4,21 +4,21 @@ import { User } from "lucide-react";
 const team = [
   {
     name: "Dadan Hamdani (64)",
-    role: "Pemilik",
+    role: "Pemilik & Pemangkas",
     description: "Melanjutkan estafet keahlian sejak 1987, beliau menjaga marwah Gunting Rambut Waspada dengan dedikasi yang tak lekang oleh waktu.",
     image: "/images/owner.jpg",
     accent: "red"
   },
   {
     name: "Tatang Gojali (59)",
-    role: "Penata Rambut Senior",
+    role: "Pemangkas Rambut Senior",
     description: "Sosok senior yang telah mengukir kepercayaan pelanggan sejak 1994, memadukan ketelitian klasik dengan sentuhan personal yang hangat.",
     image: "/images/tatang.jpeg",
     accent: "amber"
   },
   {
     name: "Syahrul Anwar (55)",
-    role: "Penata Rambut Senior",
+    role: "Pemangkas Rambut Senior",
     description: "Dengan pengalaman lebih dari dua dekade, beliau menghadirkan presisi dalam setiap potongan, memastikan tradisi pangkas tetap relevan bagi setiap generasi.",
     image: "/images/syahrul.png",
     accent: "blue"
