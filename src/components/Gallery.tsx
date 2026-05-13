@@ -1,48 +1,66 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { X } from "lucide-react";
 
 const galleryItems = [
   {
-    src: "/images/haircut-1.jpg",
-    alt: "Hasil potongan rambut dewasa",
-    label: "Potongan Dewasa",
-    tag: "Dewasa",
-  },
-  {
-    src: "/images/haircut-2.jpg",
-    alt: "Potongan rambut anak-anak",
-    label: "Potongan Anak-Anak",
-    tag: "Anak-anak",
-  },
-  {
-    src: "/images/haircut-3.jpg",
-    alt: "Alat pangkas tradisional",
-    label: "Alat Tradisional",
-    tag: "Teknik",
-  },
-  {
-    src: "/images/barber-about.jpg",
-    alt: "Suasana tempat pangkas",
-    label: "Suasana Tempat",
+    src: "/images/waspada.jpg",
+    alt: "Papan Nama Gunting Rambut Waspada",
+    label: "Identitas Kami",
     tag: "Tempat",
   },
   {
-    src: "/images/hero-bg.jpg",
-    alt: "Interior pangkas rambut",
-    label: "Interior Klasik",
+    src: "/images/main-bench1.jpeg",
+    alt: "Area pangkas utama",
+    label: "Meja Pangkas Utama 1",
+    tag: "Tempat",
+  },
+  {
+    src: "/images/main-bench2.png",
+    alt: "Suasana pangkas rambut",
+    label: "Meja Pangkas Utama 2",
+    tag: "Tempat",
+  },
+  {
+    src: "/images/main-bench3.jpeg",
+    alt: "Detail area pangkas",
+    label: "Meja Pangkas Utama 3",
+    tag: "Tempat",
+  },
+  {
+    src: "/images/second-bench1.jpeg",
+    alt: "Area pangkas kedua",
+    label: "Meja Pangkas Kedua 1",
+    tag: "Tempat",
+  },
+  {
+    src: "/images/second-bench2.png",
+    alt: "Fasilitas pangkas",
+    label: "Meja Pangkas Kedua 2",
+    tag: "Tempat",
+  },
+  {
+    src: "/images/cabinet.jpeg",
+    alt: "Peralatan dan penyimpanan",
+    label: "Lemari Peralatan",
     tag: "Interior",
   },
 ];
 
-
-
 export default function Gallery() {
-  const [activeTag, setActiveTag] = useState("Semua");
-  const tags = ["Semua", "Dewasa", "Anak-anak", "Teknik", "Tempat", "Interior"];
+  const [selectedImage, setSelectedImage] = useState<typeof galleryItems[0] | null>(null);
 
-  const filtered = activeTag === "Semua"
-    ? galleryItems
-    : galleryItems.filter((g) => g.tag === activeTag);
+  // Lock scroll when modal is open
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedImage]);
 
   return (
     <section id="gallery" className="py-20 md:py-32 bg-stone-900 relative overflow-hidden">
@@ -67,51 +85,27 @@ export default function Gallery() {
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-amber-700" />
           </div>
           <p className="text-stone-400 text-base md:text-lg max-w-xl mx-auto">
-            Setiap potongan rambut adalah karya yang kami kerjakan dengan penuh perhatian dan keahlian.
+            Setiap foto menceritakan dedikasi kami dalam menjaga tradisi pangkas rambut di Cianjur.
           </p>
         </motion.div>
 
-        {/* Filter Tags */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-wrap justify-center gap-2 mb-10"
-        >
-          {tags.map((tag) => (
-            <button
-              key={tag}
-              onClick={() => setActiveTag(tag)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                activeTag === tag
-                  ? "bg-amber-700 text-amber-50 shadow-lg shadow-amber-900/40"
-                  : "bg-stone-800 text-stone-400 hover:bg-stone-700 hover:text-stone-200 border border-stone-700"
-              }`}
-            >
-              {tag}
-            </button>
-          ))}
-        </motion.div>
-
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-16">
-          {filtered.map((item, i) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 mb-16">
+          {galleryItems.map((item, i) => (
             <motion.div
               key={item.src + i}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: i * 0.07 }}
+              transition={{ duration: 0.4, delay: i * 0.05 }}
               whileHover={{ scale: 1.02 }}
-              className={`relative group overflow-hidden rounded-xl md:rounded-2xl cursor-pointer ${
-                i === 0 ? "col-span-2 md:col-span-1 row-span-1" : ""
-              }`}
+              onClick={() => setSelectedImage(item)}
+              className="relative group overflow-hidden rounded-xl md:rounded-2xl cursor-pointer"
             >
-              <div className="aspect-square overflow-hidden">
+              <div className="aspect-square w-full h-full overflow-hidden">
                 <img
                   src={item.src}
                   alt={item.alt}
-                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 md:grayscale md:group-hover:grayscale-0"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -122,9 +116,61 @@ export default function Gallery() {
             </motion.div>
           ))}
         </div>
-
-
       </div>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10 bg-stone-950/95 backdrop-blur-sm"
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="absolute top-5 right-5 text-stone-400 hover:text-white p-2 bg-stone-900/50 rounded-full z-[110]"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedImage(null);
+              }}
+            >
+              <X className="w-8 h-8" />
+            </motion.button>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-5xl w-full flex flex-col items-center justify-center overflow-y-auto py-10"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex flex-col items-center w-full max-h-full">
+                <img
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-2xl mb-6"
+                />
+                
+                <div className="text-center px-4">
+                  <span className="inline-block px-3 py-1 bg-amber-700 text-amber-100 text-xs font-bold rounded-full mb-3 uppercase tracking-widest">
+                    {selectedImage.tag}
+                  </span>
+                  <h3 className="text-2xl md:text-3xl font-bold text-stone-100 leading-tight" style={{ fontFamily: "Playfair Display, serif" }}>
+                    {selectedImage.label}
+                  </h3>
+                  <p className="text-stone-400 text-sm md:text-base mt-2 max-w-2xl">
+                    {selectedImage.alt}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

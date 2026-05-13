@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Check, Clock, Sparkles, User, Users } from "lucide-react";
+import { Check, Sparkles, User, Users } from "lucide-react";
 
 const plans = [
   {
@@ -139,39 +139,14 @@ export default function Pricing() {
                       : "bg-stone-700 hover:bg-stone-600 text-stone-200"
                   }`}
                 >
-                  Booking Sekarang
+                  Pesan Sekarang
                 </a>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Hours info */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.6 }}
-          className="max-w-2xl mx-auto bg-stone-800/60 border border-stone-700/50 rounded-2xl p-6 md:p-8 text-center"
-        >
-          <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-amber-700/40 bg-stone-900 text-amber-400">
-            <Clock className="w-6 h-6" />
-          </div>
-          <h4 className="text-stone-100 font-bold text-xl mb-4" style={{ fontFamily: "Lora, serif" }}>Jam Operasional</h4>
-          <div className="space-y-2">
-            <div className="flex items-center justify-between max-w-xs mx-auto">
-              <span className="text-stone-400 text-sm">Senin - Sabtu</span>
-              <span className="text-amber-400 font-semibold text-sm">24 Jam Nonstop</span>
-            </div>
-            <div className="flex items-center justify-between max-w-xs mx-auto">
-              <span className="text-stone-400 text-sm">Minggu</span>
-              <span className="text-red-400 font-semibold text-sm">Tutup</span>
-            </div>
-          </div>
-          <p className="text-stone-500 text-xs mt-4">
-            * Tersedia 24 jam sehari, kami siap melayani kapanpun Anda membutuhkan
-          </p>
-        </motion.div>
+
       </div>
     </section>
   );

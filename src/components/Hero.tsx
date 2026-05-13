@@ -15,9 +15,9 @@ export default function Hero() {
       {/* Background Image with overlay */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero-bg.jpg"
+          src="/images/hero-bg.jpeg"
           alt="Suasana Gunting Rambut Waspada"
-          className="w-full h-full object-cover object-center grayscale transition-all duration-700 group-hover:grayscale-0"
+          className="w-full h-full object-cover object-center grayscale-0 md:grayscale transition-all duration-700 md:group-hover:grayscale-0"
         />
         {/* Multi-layer gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-stone-950/80 via-stone-900/70 to-stone-950/90" />

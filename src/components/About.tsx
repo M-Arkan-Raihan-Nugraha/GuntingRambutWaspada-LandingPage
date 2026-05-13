@@ -2,25 +2,31 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
-import { Scissors, MapPin, Landmark, Star, Zap, Banknote, Heart } from "lucide-react";
+import { Scissors, Landmark, Star, Zap, Banknote, Heart } from "lucide-react";
 
 const timelineEvents = [
   {
     year: "1982",
     title: "Awal Mula",
-    description: "Langkah pertama kami dimulai di depan Pasar Ramayana Cianjur. Sejak saat itu, kami mulai dipercaya sebagai tempat andalan warga untuk merapikan penampilan.",
+    description: "Kami memulai perjalanan ini melalui rintisan Paman dari Bapak Dadan di Pasar Ramayana Cianjur, mengawali dedikasi pelayanan pangkas rambut bagi warga.",
     icon: <Scissors className="w-5 h-5" />,
+  },
+  {
+    year: "1987",
+    title: "Era Bapak Dadan",
+    description: "Setelah Paman berpulang, kami melanjutkan tongkat estafet kepemimpinan melalui Bapak Dadan, menjaga kualitas dan tradisi hingga saat ini.",
+    icon: <Heart className="w-5 h-5" />,
   },
   {
     year: "1994",
     title: "Pindah ke Dekat Pemda",
-    description: "Kami beralih ke Jl. Siliwangi, di sekitar kawasan Pemda Kabupaten Cianjur. Di sinilah nama kami semakin melekat di hati para pelanggan setia lintas generasi.",
+    description: "Kami berpindah ke Jl. Siliwangi, di sekitar kawasan Pemda Kabupaten Cianjur. Di sinilah nama kami semakin melekat di hati para pelanggan setia lintas generasi.",
     icon: <Landmark className="w-5 h-5" />,
   },
   {
     year: "2025",
-    title: "Lokasi Sekarang",
-    description: "Kini kami menetap di antara Kantor PWI dan jembatan Gang Kirana IV. Suasana baru, namun dengan dedikasi dan kualitas layanan klasik yang tak pernah berubah.",
+    title: "Lokasi Saat Ini",
+    description: "Kini kami menetap di antara Kantor PWI dan jembatan memasuki GG. Kirana IV. Kami menghadirkan suasana baru, namun dengan dedikasi dan kualitas layanan klasik yang tak pernah berubah.",
     icon: <Star className="w-5 h-5" />,
     current: true,
   },
@@ -47,11 +53,6 @@ function TimelineItem({ event, index }: { event: typeof timelineEvents[0]; index
           </div>
           <h3 className="text-stone-100 font-semibold text-lg mb-1.5" style={{ fontFamily: "Lora, serif" }}>{event.title}</h3>
           <p className="text-stone-400 text-sm leading-relaxed">{event.description}</p>
-          {event.current && (
-            <span className="inline-flex items-center mt-2 px-3 py-1 bg-amber-700/20 border border-amber-600/30 text-amber-400 text-xs rounded-full font-medium">
-              <MapPin className="w-3 h-3 mr-1" /> Lokasi Saat Ini
-            </span>
-          )}
         </div>
       </motion.div>
 
@@ -120,7 +121,7 @@ export default function About() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16 md:mb-20"
         >
-          <span className="text-amber-500 text-sm font-semibold tracking-widest uppercase mb-3 block">Perjalanan Kami</span>
+          <span className="text-amber-500 text-sm font-semibold tracking-widest uppercase mb-3 block">Sejarah Perjalanan</span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-stone-50 mb-5" style={{ fontFamily: "Playfair Display, serif" }}>
             Tentang <span className="text-amber-500 italic">Kami</span>
           </h2>
@@ -130,9 +131,9 @@ export default function About() {
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-amber-700" />
           </div>
           <p className="text-stone-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            Gunting Rambut Waspada adalah usaha pangkas rambut legendaris di Cianjur yang telah 
-            berdiri sejak tahun <span className="text-amber-400 font-semibold">1982</span> dan 
-            tetap bertahan hingga sekarang dengan pelayanan yang tak pernah pudar.
+            Gunting Rambut Waspada adalah dedikasi kami dalam dunia pangkas rambut legendaris di Cianjur yang telah 
+            berdiri sejak tahun <span className="text-amber-400 font-semibold">1982</span>. 
+            Melewati lintas generasi, kami tetap menjaga tradisi kualitas.
           </p>
         </motion.div>
 
@@ -149,14 +150,9 @@ export default function About() {
               <img
                 src="/images/waspada.jpg"
                 alt="Suasana Gunting Rambut Waspada"
-                className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                className="w-full h-full object-cover grayscale-0 md:grayscale transition-all duration-500 md:group-hover:grayscale-0"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950/60 to-transparent" />
-              {/* Floating badge */}
-              <div className="absolute bottom-4 left-4 bg-stone-950/80 backdrop-blur-sm border border-amber-700/40 rounded-xl px-4 py-3">
-                <p className="text-amber-400 font-bold text-2xl" style={{ fontFamily: "Playfair Display, serif" }}>1982</p>
-                <p className="text-stone-300 text-xs">Tahun Berdiri</p>
-              </div>
             </div>
             {/* Decorative border */}
             <div className="absolute -top-3 -left-3 w-24 h-24 border-t-2 border-l-2 border-amber-700/40 rounded-tl-2xl" />
@@ -174,9 +170,9 @@ export default function About() {
             </h3>
             <div className="space-y-4 text-stone-400 leading-relaxed">
               <p>
-                Sejak pertama kali membuka pintu di Pasar Ramayana Cianjur pada tahun 1982, 
-                Gunting Rambut Waspada telah menjadi tempat terpercaya bagi masyarakat Cianjur 
-                untuk tampil rapi dengan harga yang sangat terjangkau.
+                Kami memulai perjalanan ini melalui Paman pada tahun 1982 di Pasar Ramayana Cianjur. 
+                Sejarah kami kemudian berlanjut di tangan Bapak Dadan sejak tahun 1987 
+                untuk meneruskan warisan keahlian pangkas rambut tradisional yang telah dipercayai warga.
               </p>
               <p>
                 Meskipun telah berpindah lokasi sebanyak empat kali, pelanggan setia kami selalu 

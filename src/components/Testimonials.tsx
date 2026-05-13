@@ -40,7 +40,7 @@ const testimonials = [
     role: "Karyawan Swasta",
     icon: <User className="w-5 h-5" />,
     rating: 5,
-    text: "Enak banget tempatnya, santai dan ngobrolnya nyaman. Sudah kayak potong rambut di rumah sendiri. Buka 24 jam juga sangat membantu karena jadwal kerja saya tidak menentu.",
+    text: "Enak banget tempatnya, santai dan ngobrolnya nyaman. Sudah kayak potong rambut di rumah sendiri. Lokasinya yang sangat strategis sangat membantu di tengah kesibukan saya.",
     since: "Pelanggan sejak 2015",
   },
   {

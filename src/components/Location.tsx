@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle, ChevronRight, Clock, MapPin, MessageCircle, Navigation, Scissors, User, Users } from "lucide-react";
+import { ChevronRight, Clock, MapPin, MessageCircle, Navigation, Scissors, User, Users } from "lucide-react";
 
 export default function Location() {
   const waLink = "https://wa.me/6289690448899";
@@ -20,7 +20,7 @@ export default function Location() {
           transition={{ duration: 0.7 }}
           className="text-center mb-14"
         >
-          <span className="text-amber-500 text-sm font-semibold tracking-widest uppercase mb-3 block">Temukan Kami</span>
+          <span className="text-amber-500 text-sm font-semibold tracking-widest uppercase mb-3 block">Temukan</span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-stone-50 mb-5" style={{ fontFamily: "Playfair Display, serif" }}>
             Lokasi <span className="text-amber-500 italic">Kami</span>
           </h2>
@@ -50,6 +50,7 @@ export default function Location() {
                 className="h-full w-full"
                 style={{ border: 0 }}
                 allowFullScreen
+                allow="accelerometer; gyroscope; magnetometer; device-orientation"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
@@ -61,11 +62,11 @@ export default function Location() {
               <div>
                 <p className="text-stone-100 font-medium text-sm mb-0.5">Alamat Lengkap</p>
                 <p className="text-stone-400 text-sm leading-relaxed">
-                  Di antara Kantor PWI Cianjur dan Jembatan menuju Gang Kirana IV<br />
-                  RT 02 RW 21, Cianjur, Jawa Barat
+                  Di antara Kantor PWI Cianjur dan Jembatan memasuki Gang Kirana IV<br />
+                  RT02/RW21, Pamoyanan, Cianjur, Jawa Barat
                 </p>
                 <p className="text-amber-500/70 text-xs mt-2 italic">
-                  * Berlokasi sejak Oktober 2025
+                  * Lokasi sejak 2025
                 </p>
               </div>
             </div>
@@ -88,25 +89,18 @@ export default function Location() {
                 <h3 className="text-stone-100 font-bold text-lg" style={{ fontFamily: "Lora, serif" }}>Jam Operasional</h3>
               </div>
               <div className="space-y-3">
-                <div className="flex items-center justify-between py-2 border-b border-stone-700/50">
-                  <span className="text-stone-300 text-sm font-medium">Senin - Sabtu</span>
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-green-400 font-semibold text-sm">24 Jam Nonstop</span>
-                  </div>
-                </div>
                 <div className="flex items-center justify-between py-2">
-                  <span className="text-stone-300 text-sm font-medium">Minggu</span>
+                  <span className="text-stone-300 text-sm font-medium">Senin - Minggu</span>
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-red-500" />
-                    <span className="text-red-400 font-semibold text-sm">Tutup</span>
+                    <span className="w-2 h-2 rounded-full bg-amber-500" />
+                    <span className="text-amber-400 font-semibold text-sm">07.00 - 20.00 WIB</span>
                   </div>
                 </div>
               </div>
-              <div className="mt-4 p-3 bg-green-900/20 border border-green-700/20 rounded-xl">
-                <p className="text-green-400 text-xs text-center font-medium">
-                  <CheckCircle className="inline-block w-3.5 h-3.5 mr-1 align-[-2px]" />
-                  Sekarang: Buka 24 Jam - Siap Melayani Anda!
+              <div className="mt-4 p-3 bg-amber-900/20 border border-amber-700/20 rounded-xl">
+                <p className="text-amber-400 text-xs text-center font-medium">
+                  <Clock className="inline-block w-3.5 h-3.5 mr-1 align-[-2px]" />
+                  Buka Setiap Hari - Siap Melayani Anda!
                 </p>
               </div>
             </div>
@@ -167,7 +161,6 @@ export default function Location() {
               <ul className="space-y-1.5 text-stone-400 text-sm">
                 <li className="flex items-start gap-2"><ChevronRight className="w-3.5 h-3.5 text-amber-600 mt-0.5 flex-shrink-0" /> Di sebelah Kantor PWI Cianjur</li>
                 <li className="flex items-start gap-2"><ChevronRight className="w-3.5 h-3.5 text-amber-600 mt-0.5 flex-shrink-0" /> Dekat jembatan menuju Gang Kirana IV</li>
-                <li className="flex items-start gap-2"><ChevronRight className="w-3.5 h-3.5 text-amber-600 mt-0.5 flex-shrink-0" /> RT 02 RW 21, Cianjur</li>
               </ul>
             </div>
           </motion.div>

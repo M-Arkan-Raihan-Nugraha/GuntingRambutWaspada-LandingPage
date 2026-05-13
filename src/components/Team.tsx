@@ -3,32 +3,25 @@ import { User } from "lucide-react";
 
 const team = [
   {
-    name: "H. Asep Waspada",
-    role: "Pendiri & Pemilik",
-    description: "Merintis Gunting Rambut Waspada sejak 1982. Menjaga kualitas dan tradisi pangkas rambut klasik tetap hidup di Cianjur.",
+    name: "Dadan Hamdani (64)",
+    role: "Pemilik",
+    description: "Melanjutkan estafet keahlian sejak 1987, beliau menjaga marwah Gunting Rambut Waspada dengan dedikasi yang tak lekang oleh waktu.",
     image: "/images/owner.jpg",
     accent: "red"
   },
   {
-    name: "Syahrul Anwar (Acong)",
-    role: "Senior Barber",
-    description: "Berpengalaman lebih dari 15 tahun. Ahli dalam gaya rambut klasik maupun modern yang disukai berbagai kalangan.",
-    image: "/images/acong.png",
+    name: "Tatang Gojali (59)",
+    role: "Penata Rambut Senior",
+    description: "Sosok senior yang telah mengukir kepercayaan pelanggan sejak 1994, memadukan ketelitian klasik dengan sentuhan personal yang hangat.",
+    image: "/images/tatang.jpeg",
     accent: "amber"
   },
   {
-    name: "Kang Dede",
-    role: "Barber",
-    description: "Generasi penerus dengan keterampilan cekatan dan selalu update dengan tren pangkas rambut masa kini.",
-    image: "/images/haircut-2.jpg",
+    name: "Syahrul Anwar (55)",
+    role: "Penata Rambut Senior",
+    description: "Dengan pengalaman lebih dari dua dekade, beliau menghadirkan presisi dalam setiap potongan, memastikan tradisi pangkas tetap relevan bagi setiap generasi.",
+    image: "/images/syahrul.png",
     accent: "blue"
-  },
-  {
-    name: "Kang Deni",
-    role: "Barber",
-    description: "Tenaga muda profesional yang selalu memastikan kepuasan dan kenyamanan di setiap potongan rambut.",
-    image: "/images/haircut-3.jpg",
-    accent: "stone"
   }
 ];
 
@@ -65,7 +58,7 @@ export default function Team() {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {team.map((member, i) => (
             <motion.div
               key={member.name}
@@ -86,7 +79,7 @@ export default function Team() {
                 <img 
                   src={member.image} 
                   alt={member.name} 
-                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 grayscale-0 md:grayscale md:group-hover:grayscale-0"
                 />
                 <div className={`absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-stone-950 to-transparent`} />
               </div>

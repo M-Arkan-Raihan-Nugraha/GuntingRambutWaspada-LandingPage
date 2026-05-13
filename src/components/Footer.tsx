@@ -137,12 +137,8 @@ export default function Footer() {
                     <p className="text-stone-300 text-sm font-medium mb-1">Jam Operasional</p>
                     <div className="space-y-1">
                       <div className="flex items-center justify-between gap-4">
-                        <span className="text-stone-500 text-xs">Senin - Sabtu</span>
-                        <span className="text-green-400 text-xs font-semibold">24 Jam</span>
-                      </div>
-                      <div className="flex items-center justify-between gap-4">
-                        <span className="text-stone-500 text-xs">Minggu</span>
-                        <span className="text-red-400 text-xs font-semibold">Tutup</span>
+                        <span className="text-stone-500 text-xs">Senin - Minggu</span>
+                        <span className="text-amber-400 text-xs font-semibold">07.00 - 20.00 WIB</span>
                       </div>
                     </div>
                   </div>

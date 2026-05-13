@@ -30,8 +30,8 @@ const features = [
   },
   {
     icon: <Moon className="w-7 h-7" />,
-    title: "Buka 24 Jam",
-    description: "Kami beroperasi 24 jam nonstop dari Senin hingga Sabtu. Siap melayani kapanpun Anda datang.",
+    title: "Buka Setiap Hari",
+    description: "Kami siap melayani Anda setiap hari mulai pukul 07.00 hingga 20.00 WIB. Konsistensi layanan adalah prioritas kami.",
   },
 ];
 
@@ -52,7 +52,7 @@ export default function Features() {
           transition={{ duration: 0.7 }}
           className="text-center mb-14 md:mb-18"
         >
-          <span className="text-amber-500 text-sm font-semibold tracking-widest uppercase mb-3 block">Mengapa Pilih Kami</span>
+          <span className="text-amber-500 text-sm font-semibold tracking-widest uppercase mb-3 block">Alasan Memilih</span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-stone-50 mb-5" style={{ fontFamily: "Playfair Display, serif" }}>
             Keunggulan <span className="text-amber-500 italic">Kami</span>
           </h2>
