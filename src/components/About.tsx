@@ -174,7 +174,7 @@ export default function About() {
             </h3>
             <div className="space-y-4 text-stone-400 leading-relaxed">
               <p>
-                Sejak pertama kali membuka pintu di depan Pasar Ramayana Cianjur pada tahun 1982, 
+                Sejak pertama kali membuka pintu di Pasar Ramayana Cianjur pada tahun 1982, 
                 Gunting Rambut Waspada telah menjadi tempat terpercaya bagi masyarakat Cianjur 
                 untuk tampil rapi dengan harga yang sangat terjangkau.
               </p>

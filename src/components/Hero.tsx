@@ -71,7 +71,7 @@ export default function Hero() {
           className="text-xl sm:text-2xl md:text-3xl text-amber-200/90 font-medium mb-4 md:mb-5"
           style={{ fontFamily: "Lora, serif" }}
         >
-          Legenda Gunting Rambut di Cianjur <br /> Sejak 1982
+          Legenda Gunting Rambut di Cianjur Sejak 1982
         </motion.p>
 
         {/* Description */}
