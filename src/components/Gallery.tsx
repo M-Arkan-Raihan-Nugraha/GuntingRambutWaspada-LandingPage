@@ -5,45 +5,38 @@ import { X } from "lucide-react";
 const galleryItems = [
   {
     src: "/images/waspada.jpg",
-    alt: "Papan Nama Gunting Rambut Waspada",
+    alt: "Gunting Rambut Waspada",
     label: "Identitas Kami",
-    tag: "Tempat",
   },
   {
     src: "/images/main-bench1.jpeg",
     alt: "Area pangkas utama",
     label: "Meja Pangkas Utama 1",
-    tag: "Tempat",
   },
   {
     src: "/images/main-bench2.png",
     alt: "Suasana pangkas rambut",
     label: "Meja Pangkas Utama 2",
-    tag: "Tempat",
   },
   {
     src: "/images/main-bench3.jpeg",
     alt: "Detail area pangkas",
     label: "Meja Pangkas Utama 3",
-    tag: "Tempat",
   },
   {
     src: "/images/second-bench1.jpeg",
     alt: "Area pangkas kedua",
     label: "Meja Pangkas Kedua 1",
-    tag: "Tempat",
   },
   {
     src: "/images/second-bench2.png",
-    alt: "Fasilitas pangkas",
+    alt: "Suasana pangkas rambut",
     label: "Meja Pangkas Kedua 2",
-    tag: "Tempat",
   },
   {
     src: "/images/cabinet.jpeg",
     alt: "Peralatan dan penyimpanan",
     label: "Lemari Peralatan",
-    tag: "Interior",
   },
 ];
 
@@ -110,7 +103,6 @@ export default function Gallery() {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                <span className="inline-block px-2.5 py-1 bg-amber-700/90 text-amber-100 text-xs rounded-full mb-1.5">{item.tag}</span>
                 <p className="text-stone-100 font-semibold text-sm">{item.label}</p>
               </div>
             </motion.div>
@@ -156,9 +148,6 @@ export default function Gallery() {
                 />
                 
                 <div className="text-center px-4">
-                  <span className="inline-block px-3 py-1 bg-amber-700 text-amber-100 text-xs font-bold rounded-full mb-3 uppercase tracking-widest">
-                    {selectedImage.tag}
-                  </span>
                   <h3 className="text-2xl md:text-3xl font-bold text-stone-100 leading-tight" style={{ fontFamily: "Playfair Display, serif" }}>
                     {selectedImage.label}
                   </h3>
