@@ -11,27 +11,27 @@ const galleryItems = [
   {
     src: "/images/main-bench1.jpeg",
     alt: "Area pangkas utama",
-    label: "Meja Pangkas Utama 1",
+    label: "Meja Pangkas Utama",
   },
   {
     src: "/images/main-bench2.png",
     alt: "Suasana pangkas rambut",
-    label: "Meja Pangkas Utama 2",
+    label: "Meja Pangkas Utama",
   },
   {
     src: "/images/main-bench3.jpeg",
     alt: "Detail area pangkas",
-    label: "Meja Pangkas Utama 3",
+    label: "Meja Pangkas Utama",
   },
   {
     src: "/images/second-bench1.jpeg",
     alt: "Area pangkas kedua",
-    label: "Meja Pangkas Kedua 1",
+    label: "Meja Pangkas Kedua",
   },
   {
     src: "/images/second-bench2.png",
     alt: "Suasana pangkas rambut",
-    label: "Meja Pangkas Kedua 2",
+    label: "Meja Pangkas Kedua",
   },
   {
     src: "/images/cabinet.jpeg",
