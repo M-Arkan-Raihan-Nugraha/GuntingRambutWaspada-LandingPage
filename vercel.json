@@ -1,4 +1,17 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "guntingrambutwaspada-lp.vercel.app"
+        }
+      ],
+      "destination": "https://waspada-lp.vercel.app/:path*",
+      "statusCode": 301
+    }
+  ],
   "headers": [
     {
       "source": "/sitemap.xml",
